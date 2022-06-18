@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table, th, td {
+			  border:1px solid black;
+			}
+			</style>
+		<script type='text/javascript'>
+			function average(arr){
+				let sum=0;
+				let length=arr.length;
+				for(let i in arr) {
+					sum += +arr[i]; 
+					//length++;
+				}
+				return sum/length;
+			}
+
+		</script>
+	</head>
+	<body>
+		
+		<script>
+			document.write(localStorage.student); 
+			let retStud = JSON.parse(localStorage.getItem("student"));
+			document.write('<table style="width:100%">')
+				
+			document.write("<tr>");
+				document.write("<th><b>Студент:</b></th>");		
+				document.write("<th><b>Оценки:</b></th>");	
+				document.write("<th><b>Средний балл:</b></th>");
+			document.write("</tr>");	
+			document.write("<tr>");
+				document.write("<td>" + retStud.name+"</td>");
+				document.write("<td>" +retStud.marks+"</td>");		
+				document.write("<td>" +average(retStud.marks).toFixed(2)+"</td>");	
+			document.write("</tr>");	
+ 
+			
+		</script>
+	</body>
+</html>
